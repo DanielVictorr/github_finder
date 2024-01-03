@@ -13,9 +13,10 @@ const User = ({
     following,
     location
 }: UserProps) => {
+
     return(
         <div className={classes.user}>
-            <img src={avatar_url} alt={login} />
+            <img src={avatar_url} alt={login}/>
             <h2>{login}</h2>
             {location && (
                 <p className={classes.location}>
@@ -34,8 +35,7 @@ const User = ({
                     <p className={classes.number}>{following}</p>
                 </div>
             </div>
-            <Link to={`/repos/${login}`}>ver melhores projetos</Link>           
-
+            <Link to={`/repos/${login}`}>ver melhores projetos</Link> 
         </div>
     )
 }

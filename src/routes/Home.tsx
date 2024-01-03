@@ -20,12 +20,14 @@ const Home = () => {
 
         const data = await res.json();
 
+        setIsLoading(false);
+
         if(res.status === 404 ) {
             setError(true);
             return;
         };
 
-        console.log(data);
+        setError(false);
 
         const {avatar_url, login, location, followers, following} = data;
 
@@ -39,15 +41,14 @@ const Home = () => {
 
         setUser(userData);
     };
+    
 
     return (
         <div>
             <Search loadUser={loadUser}/>
-
+            {isLoading && <Loader />}
             {user && <User {...user} />}
-
             {error && <Error />}
-
         </div>
     
     );

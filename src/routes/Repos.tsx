@@ -49,7 +49,7 @@ const Repos = () => {
       {repos && repos.length === 0 && <p>Não há repositórios.</p>}
       {repos && repos.length > 0 && (
         <div className={classes.repos_container}>
-          {repos.map((repo: RepoProps) => (
+         {repos.map((repo: RepoProps) => (
             <Repo key={repo.name} {...repo} />
           ))}
         </div>
